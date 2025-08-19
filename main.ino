@@ -127,7 +127,6 @@ void displayData(int distance, int pixelX, int pixelY) {
   display.setTextColor(BLACK);
   display.setCursor(0, 0);
   display.setTextSize(1);
-  display.display();
   display.clearDisplay();
 
   //Draw base line and current distance measured
@@ -151,5 +150,8 @@ void displayData(int distance, int pixelX, int pixelY) {
   if (trailCount >= MAX_TRAIL_LINES) {
     trailCount = 0;
   }
+
+  // Update the physical display with the buffered graphics
+  display.display();
 
 }
